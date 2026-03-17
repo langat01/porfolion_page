@@ -3,101 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Rivera | Interactive Book Portfolio</title>
+    <title>Weldon Langat | Data Science Portfolio</title>
     <!-- Realistic Page Flip Library -->
-    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
-    <!-- Elegant Book Fonts -->
+    <script src="https://cdn.jsdelivr.net"></script>
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --cover-color: #4a2c2a; /* Deep Leather Brown */
-            --paper-color: #fdfaf0; /* Aged Paper White */
-            --text-color: #2c2c2c;
+            --primary-blue: #003366;
+            --accent-gold: #c5a059;
+            --paper-white: #ffffff;
+            --bg-dark: #0f172a;
         }
 
         body {
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 20px 20px;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; margin: 0; font-family: 'Inter', sans-serif;
         }
 
-        #book-container {
-            width: 900px;
-            height: 600px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
+        #book-container { width: 900px; height: 600px; box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
 
         .page {
-            background-color: var(--paper-color);
-            padding: 40px;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            color: var(--text-color);
-            font-family: 'Crimson Text', serif;
-            font-size: 18px;
-            line-height: 1.6;
+            background-color: var(--paper-white);
+            padding: 45px; box-sizing: border-box;
+            border: 1px solid #e2e8f0; color: #1e293b;
         }
 
-        /* Cover Styling */
+        /* Cover Design */
         .page.--hard {
-            background-color: var(--cover-color);
-            color: #d4af37; /* Gold Foil Text */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border: 5px double #d4af37;
+            background: linear-gradient(135deg, var(--primary-blue), #001a33);
+            color: white; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            border: 8px solid var(--accent-gold);
         }
 
-        .page.--hard h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        .page.--hard h1 { font-size: 3rem; margin: 10px 0; letter-spacing: 2px; }
+        .page.--hard .subtitle { color: var(--accent-gold); font-weight: bold; letter-spacing: 4px; font-size: 0.9rem; }
 
-        .page.--hard p { font-style: italic; opacity: 0.8; }
-
-        /* Content Styling */
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--cover-color);
-            border-bottom: 1px solid #ccc;
-            margin-top: 0;
-        }
-
-        .project-img {
-            width: 100%;
-            height: 180px;
-            background: #eee;
-            margin: 15px 0;
-            border: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-style: italic;
-            color: #888;
-        }
-
-        .page-footer {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-            color: #999;
-        }
-
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-
+        /* Professional Content Styles */
+        h2 { color: var(--primary-blue); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px; margin-top: 0; }
+        .stat-box { background: #f1f5f9; padding: 15px; border-radius: 8px; margin: 10px 0; font-family: 'Fira Code', monospace; font-size: 14px; border-left: 4px solid var(--primary-blue); }
+        .tag { display: inline-block; background: var(--primary-blue); color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; margin: 2px; }
+        .footer { position: absolute; bottom: 25px; width: calc(100% - 90px); text-align: center; font-size: 12px; color: #94a3b8; }
     </style>
 </head>
 <body>
@@ -105,75 +54,85 @@
 <div id="book-container">
     <!-- FRONT COVER -->
     <div class="page --hard" data-density="hard">
-        <p>Selected Works</p>
-        <h1>ALEX RIVERA</h1>
-        <p>Full-Stack Developer & Designer</p>
-        <div style="margin-top: 40px; font-size: 12px; letter-spacing: 5px;">MMXXIV</div>
+        <div class="subtitle">DATA SCIENCE & FINANCIAL ENGINEERING</div>
+        <h1>WELDON LANGAT</h1>
+        <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 20px 0;"></div>
+        <p>Portfolio of Quantitative Insights</p>
     </div>
 
-    <!-- PAGE 1: INTRO -->
+    <!-- PAGE 1: ACADEMIC PROFILE -->
     <div class="page">
-        <h2>The Architect's Note</h2>
-        <p>Welcome to my digital workshop. Like a well-worn sketchbook, this portfolio holds the blueprints of my journey through the world of code and design.</p>
-        <p>I believe that every pixel tells a story and every line of code should be as elegant as a handwritten letter.</p>
-        <p>Turn the page to explore my recent experiments.</p>
-        <div class="page-footer">Page 1</div>
+        <h2>Academic Foundation</h2>
+        <p>Expertise built on a rigorous mathematical and financial background.</p>
+        <div class="stat-box">
+            <strong>MSc. Financial Engineering</strong><br>
+            Advanced quantitative modeling and risk analysis.
+        </div>
+        <div class="stat-box">
+            <strong>BSc. Applied Statistics with Programming</strong><br>
+            Foundational statistical inference and algorithmic thinking.
+        </div>
+        <p>Specializing in the intersection of financial markets and machine learning.</p>
+        <div class="footer">Page 1</div>
     </div>
 
-    <!-- PAGE 2: PROJECT 1 -->
+    <!-- PAGE 2: PROFESSIONAL EXPERIENCE -->
     <div class="page">
-        <h2>Project I: EtherReal</h2>
-        <p><strong>Concept:</strong> A minimalist task management system focused on "Deep Work" sessions.</p>
-        <div class="project-img">[Interface Design Mockup]</div>
-        <p>Built with React and Node.js. It features a custom "Focus Timer" that adapts to user productivity patterns using basic machine learning.</p>
-        <div class="page-footer">Page 2</div>
+        <h2>Professional Journey</h2>
+        <p><strong>Fox Analytics</strong><br>
+        Led data-driven strategy and predictive analytics for corporate clients.</p>
+        
+        <p><strong>Murang'a County Government</strong><br>
+        Optimized public sector data workflows and regional statistical reporting.</p>
+        
+        <p><strong>Core Tech Stack:</strong><br>
+        <span class="tag">Python</span> <span class="tag">R</span> <span class="tag">SQL</span> 
+        <span class="tag">TensorFlow</span> <span class="tag">PowerBI</span> <span class="tag">Tableau</span></p>
+        <div class="footer">Page 2</div>
     </div>
 
-    <!-- PAGE 3: PROJECT 2 -->
+    <!-- PAGE 3: FEATURED PROJECTS -->
     <div class="page">
-        <h2>Project II: TerraForm</h2>
-        <p><strong>Concept:</strong> An open-source CSS framework inspired by Brutalist architecture.</p>
-        <div class="project-img">[Framework Documentation Visual]</div>
-        <p>This project focused on high-contrast layouts and aggressive typography, pushing the boundaries of standard web design.</p>
-        <div class="page-footer">Page 3</div>
+        <h2>Data-Related Projects</h2>
+        <p><strong>1. Financial Risk Predictor</strong><br>
+        Developed an LSTM model to forecast market volatility indices.</p>
+        
+        <p><strong>2. Public Resource Optimization</strong><br>
+        Spatial analysis for resource allocation within Murang'a County.</p>
+        
+        <p><strong>3. Customer Analytics Suite</strong><br>
+        Clustering algorithms for user segmentation at Fox Analytics.</p>
+        <div class="footer">Page 3</div>
     </div>
 
-    <!-- PAGE 4: SKILLS -->
+    <!-- PAGE 4: CONTACT & REPO -->
     <div class="page">
-        <h2>Tools & Craft</h2>
-        <p>Mastery is a pursuit, not a destination. Here are the tools I use to bring ideas to life:</p>
-        <ul>
-            <li><strong>Frontend:</strong> React, Vue, Three.js, SCSS</li>
-            <li><strong>Backend:</strong> Python (FastAPI), PostgreSQL, Redis</li>
-            <li><strong>Design:</strong> Figma, Adobe Creative Suite</li>
-            <li><strong>DevOps:</strong> Docker, GitHub Actions, AWS</li>
-        </ul>
-        <div class="page-footer">Page 4</div>
+        <h2>Next Steps</h2>
+        <p>Ready to leverage data to solve complex financial and social problems.</p>
+        <div class="stat-box">
+            📧 contact@weldonlangat.com<br>
+            🔗 ://github.com<br>
+            📍 Nairobi, Kenya
+        </div>
+        <p>Available for consulting and high-impact data roles.</p>
+        <div class="footer">Page 4</div>
     </div>
 
     <!-- BACK COVER -->
     <div class="page --hard" data-density="hard">
-        <h2>Let's Write the Next Chapter</h2>
-        <p>arivera@example.com</p>
-        <p>://github.com</p>
-        <div style="margin-top: 50px; width: 50px; height: 2px; background: #d4af37;"></div>
-        <p style="font-size: 12px;">© 2024 Alex Rivera</p>
+        <h1>THANK YOU</h1>
+        <p>Analysis. Insight. Action.</p>
+        <div style="font-size: 10px; letter-spacing: 2px; margin-top: 50px;">WELDON LANGAT © 2026</div>
     </div>
 </div>
 
 <script>
     const pageFlip = new St.PageFlip(document.getElementById('book-container'), {
-        width: 450, 
-        height: 600,
+        width: 450, height: 600,
         size: "stretch",
-        minWidth: 315,
-        maxWidth: 1000,
-        minHeight: 420,
-        maxHeight: 1350,
         showCover: true,
-        mobileScrollSupport: false 
+        useMouseWheel: true
     });
-
     pageFlip.loadFromHTML(document.querySelectorAll('.page'));
 </script>
 
